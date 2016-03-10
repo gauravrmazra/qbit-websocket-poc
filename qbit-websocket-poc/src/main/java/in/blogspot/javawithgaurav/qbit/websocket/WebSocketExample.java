@@ -44,6 +44,7 @@ public class WebSocketExample {
 		
 		adderService.add((r) -> System.out.println("Result from adding => " + r), 100, 200);
 		adderService.clientProxyFlush();
+		//NOTE: if we won't add sleep statement below then all calls are lost. beacause websocket takes time to open
 		Sys.sleep(8000l);
 		
 		adderService.add((r) -> System.out.println("Result from adding => " + r), 101, 201);
